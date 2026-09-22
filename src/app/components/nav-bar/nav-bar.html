@@ -1,0 +1,45 @@
+<div *ngIf="isOpen" 
+     (click)="onClose()" 
+     class="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 md:hidden transition-opacity">
+</div>
+
+<aside [ngClass]="isOpen ? 'translate-x-0' : '-translate-x-full'"
+       class="fixed inset-y-0 left-0 z-50 w-64 bg-slate-800 text-white flex flex-col transition-transform duration-300 ease-in-out md:relative md:translate-x-0 h-full">
+  
+  <!-- Conteúdo interno da sidebar (igual ao de antes) -->
+  <div class="flex items-center justify-between h-16 border-b border-slate-700 px-4 md:justify-center">
+    <span class="text-xl font-bold tracking-wider">HelpDesk Pro</span>
+    <!-- Botão de fechar (Aparece só no mobile) -->
+    <button (click)="onClose()" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="overflow-y-auto overflow-x-hidden flex-grow">
+    <ul class="flex flex-col py-4 space-y-1">
+      <li class="px-5">
+        <div class="flex flex-row items-center h-8">
+          <div class="text-sm font-light tracking-wide text-slate-400">Menu</div>
+        </div>
+      </li>
+      <li>
+        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-slate-700 text-white border-l-4 border-blue-500 bg-slate-700">
+          <span class="inline-flex justify-center items-center ml-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          </span>
+          <span class="ml-2 text-sm tracking-wide truncate">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-slate-700 text-slate-300">
+          <span class="inline-flex justify-center items-center ml-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+          </span>
+          <span class="ml-2 text-sm tracking-wide truncate">Meus Chamados</span>
+          <span class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-500 bg-blue-100 rounded-full">12</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</aside>
