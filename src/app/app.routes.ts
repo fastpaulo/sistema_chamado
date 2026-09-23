@@ -7,5 +7,9 @@ export const routes: Routes = [
   {
     path:'dashboard',
     loadComponent: () => import('./components/dashboard/dashboard').then(c =>c.Dashboard)
-  }
+  },
+{
+  path:'ticket',
+  loadComponent: () => import('./components/my-ticket/my-ticket').then(c =>c.MyTicket)
+}
 ];
